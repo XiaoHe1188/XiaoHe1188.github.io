@@ -1,0 +1,43 @@
+/* 模态框中错误信息的样式 */
+div[class^="error"] {
+	color: #FFD600;
+	padding-top: 6px;
+}
+
+/* 设置文本超长后显示省略号 */
+.text-hidden {
+	overflow: hidden;
+	/* 自动隐藏文字 */
+	text-overflow: ellipsis;
+	/* 文字隐藏后添加省略号 */
+	display: -webkit-box;
+	/* 显示行数 */
+	-webkit-line-clamp: 1;
+	/* 想要显示的行数 */
+	-webkit-box-orient: vertical;
+}
+
+#newSchemeMessages {
+	margin-bottom: 10px;
+}
+
+#newSchemeMessages div {
+	display: inline;
+	margin: 10px;
+}
+
+#newSchemeMessages input,
+#newSchemeMessages select {
+	width: 200px;
+	display: inline;
+}
+
+#schemeDetailsKind {
+	background-color: #000000;
+	color: white;
+	width: 100px;
+	display: inline;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
