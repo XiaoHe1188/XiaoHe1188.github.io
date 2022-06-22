@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo</title>
+  </head>
+  <body>
+    configId:<input type="text" name="configId" value="26d9a46c-3d6a-4a60-af5e-388920d29dde" />
+    tenantId:<input type="text" name="tenantId" value="29762" />
+    <button onclick="test()">按钮</button>
+    <!--不支持提醒-->
+	<!-- <script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script> -->
+    <script>
+    function test() {
+      var configId = document.getElementsByName("configId")[0].value
+      var tenantId = document.getElementsByName("tenantId")[0].value
+      if (!configId || !tenantId) {
+        alert('输入configId和tenantId')
+      } else {
+        window.easemobvec.bind({ 
+        tenantId: tenantId,
+		hide:true,
+        resources: true,
+        configId: configId,
+        onready: function(){ 
+          console.log("onready")
+          // sendCrmExt();
+        },
+        onclose: function(){
+          console.log("onclose")
+        },
+        onopen: function(){
+          console.log("onopen")
+        },
+        onEvaluationsubmit: function(){
+          console.log("onEvaluationsubmit")
+        },
+        onmessage: function(){
+          console.log("onmessage")
+        },
+        onsessionclosed: function(){
+          console.log("onsessionclosed")
+        },
+        onsessioncreat: function(){
+          console.log("oncreat")
+        }
+        // extMsg:{
+            //     cmd:{
+            //         updateVisitorInfoSrc:{
+            //             params:{
+            //                 uid: "cxn111111"
+            //             }
+            //         }
+            //     }
+            // },
+      });
+        }
+      }
+    </script>
+    <script src="https://sandbox.kefu.easemob.com/webim-vec/easemobvec.js"></script>
+	<!-- <script src='https://sandbox.kefu.easemob.com/webim-vec/easemobvec.js?configId=26d9a46c-3d6a-4a60-af5e-388920d29dde&lang=zh-CN'></script> -->
+  </body>
+</html>
